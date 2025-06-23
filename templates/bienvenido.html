@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>ACCESO CONCEDIDO</h2>
+        <p class="terminal">
+            Agente <strong>{{ usuario }}</strong> autorizado.<br>
+            Accediendo al sistema interno...
+        </p>
+        <a href="/logout" class="btn">Cerrar sesión</a>
+    </div>
+</body>
+</html>
