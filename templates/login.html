@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acceso Restringido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>AGENTE AUTORIZADO</h2>
+        <form method="POST">
+            <label for="username">Usuario:</label>
+            <input type="text" name="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+        <div class="terminal">Esperando credenciales...</div>
+    </div>
+</body>
+</html>

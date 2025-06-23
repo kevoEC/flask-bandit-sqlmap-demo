@@ -1,0 +1,25 @@
+name: Security Pipeline
+
+on: [push]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install bandit
+          pip install -r requirements.txt
+
+      - name: Run Bandit (SAST)
+        run: bandit -r . -f txt -o reporte_bandit.txt
+
+      - name: Show Bandit Results
+        run: cat reporte_bandit.txt
